@@ -1,0 +1,12 @@
+/* Webfont: Gentleman200-Thin */@font-face {
+    font-family: 'Gentleman200';
+    src: url('Gentleman-200-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Gentleman-200-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Gentleman-200-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Gentleman-200-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Gentleman-200-Thin.svg#Gentleman200-Thin') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

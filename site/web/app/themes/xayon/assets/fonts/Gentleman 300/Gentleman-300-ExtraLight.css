@@ -1,0 +1,12 @@
+/* Webfont: Gentleman300-ExtraLight */@font-face {
+    font-family: 'Gentleman300';
+    src: url('Gentleman-300-ExtraLight.eot'); /* IE9 Compat Modes */
+    src: url('Gentleman-300-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Gentleman-300-ExtraLight.woff') format('woff'), /* Modern Browsers */
+         url('Gentleman-300-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Gentleman-300-ExtraLight.svg#Gentleman300-ExtraLight') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
