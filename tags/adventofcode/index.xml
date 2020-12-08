@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>adventofcode on David Francos</title>
+    <link>https://davidfrancos.net/tags/adventofcode/</link>
+    <description>Recent content in adventofcode on David Francos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://davidfrancos.net/tags/adventofcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of code - Día 2</title>
+      <link>https://davidfrancos.net/post/aoc-day-two/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidfrancos.net/post/aoc-day-two/</guid>
+      <description>Continuamos con la serie &amp;lsquo;Advent of Code&amp;rsquo;, con el ejercicio del segundo día</description>
+    </item>
+    
+    <item>
+      <title>Advent of code - Día 1</title>
+      <link>https://davidfrancos.net/post/aoc-day-one/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidfrancos.net/post/aoc-day-one/</guid>
+      <description>El desarrollo de software es como cualquier otra disciplina: &lt;em&gt;require practica&lt;/em&gt;.  De vez en cuando, podemos practicar con eventos que doblan como juegos para los que nos gusta. Aqui es donde entra el Advent Of Code, un calendario de adviento para &lt;em&gt;&amp;ldquo;los nuestros&amp;rdquo;&lt;/em&gt;. En este post, resolveremos el primer desafio</description>
+    </item>
+    
+  </channel>
+</rss>

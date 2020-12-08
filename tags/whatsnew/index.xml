@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>whatsnew on David Francos</title>
+    <link>https://davidfrancos.net/tags/whatsnew/</link>
+    <description>Recent content in whatsnew on David Francos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 03 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://davidfrancos.net/tags/whatsnew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>asynccontextmanager – Novedades en python3.7</title>
+      <link>https://davidfrancos.net/post/asynccontextmanager/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidfrancos.net/post/asynccontextmanager/</guid>
+      <description>El concepto de &lt;em&gt;@asynccontextmanager&lt;/em&gt; es el mismo que @contextmanager, una forma rápida de definir objetos que son manejadores de contexto, sin necesidad de implementar una clase con los métodos mágicos &lt;em&gt;&lt;strong&gt;enter&lt;/strong&gt;&lt;/em&gt; y &lt;em&gt;&lt;strong&gt;exit&lt;/strong&gt;&lt;/em&gt;. Para ello se aprovecha de los generadores asíncronos, una funcionalidad introducida en &lt;em&gt;python3.7a0&lt;/em&gt;, por lo que ya es familiar para muchos dado que &lt;em&gt;python3.6&lt;/em&gt; lleva tiempo siendo la versión estable.</description>
+    </item>
+    
+  </channel>
+</rss>

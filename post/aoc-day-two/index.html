@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" data-theme=""><head>
+    <title> David Francos | Advent of code - Día 2 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.79.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Tecnología y patitos de goma">
+    
+    <link rel="stylesheet"
+          href="https://davidfrancos.net/css/style.min.d553cee7748f9da24efc5e8b914c4afd8d33e80145c3a856fa5554ef28db7aff.css"
+          integrity="sha256-1VPO53SPnaJO/F6LkUxK/Y0z6AFFw6hW&#43;lVU7yjbev8="
+          crossorigin="anonymous"
+          type="text/css"><link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://davidfrancos.net/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://davidfrancos.net/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://davidfrancos.net/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://davidfrancos.net/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://davidfrancos.net/post/aoc-day-two/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://davidfrancos.net/js/anatole-header.min.e782db136ec18d105a4552702eac49f4620d6867da3fbf808bd53e806c96be6e.js"
+            integrity="sha256-54LbE27BjRBaRVJwLqxJ9GINaGfaP7&#43;Ai9U&#43;gGyWvm4="
+            crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://davidfrancos.net/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Advent of code - Día 2"/>
+<meta name="twitter:description" content="Advent Of Code - Día 2"/>
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://davidfrancos.net/images/profile.jpg" alt="profile picture">
+	    <h3 title=""><a href="/"><img style="border-radius:0; width:50%" src="/images/logo.png" /></a></h3>
+            <div class="description">
+                <p>Tecnología y patitos de goma</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/davidfrancos/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/XayOn" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/david.francos" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:me@davidfrancos.net" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; David Francos 2020 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Inicio</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">Acerca de</a></li>
+        
+        
+        <li class="theme-switch-item">
+            <a class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+
+            <div class="post-title">
+                <h3>Advent of code - Día 2</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date">Wed, Dec 2, 2020</span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4 minutos de lectura</span>
+                    </div>
+                
+            </div>
+
+            <p>Recordemos el <a href="https://adventofcode.com/">Advent Of Code</a>, un calendario de
+adviento para <em>&ldquo;los nuestros&rdquo;</em>, el advent of code se define a si mismo como:</p>
+<blockquote>
+<p>Advent of Code is an Advent calendar of small programming puzzles for a
+variety of skill sets and skill levels that can be solved in any programming
+language you like.</p>
+</blockquote>
+<p>Continuo registrando todas las soluciones en un <a href="https://github.com/XayOn/aoc2020">repositorio en mi
+github</a>.</p>
+<p>Esta vez, vamos al segundo problema, disponible en la <a href="https://adventofcode.com/2020/day/2">web del advent of
+code</a></p>
+<blockquote>
+<p>Their password database seems to be a little corrupted: some of the passwords
+wouldn&rsquo;t have been allowed by the Official Toboggan Corporate Policy that was
+in effect when they were chosen.
+To try to debug the problem, they have created a list (your puzzle input) of
+passwords (according to the corrupted database) and the corporate policy when
+that password was set.
+Each line gives the password policy and then the password. The password
+policy indicates the lowest and highest number of times a given letter must
+appear for the password to be valid. For example, 1-3 a means that the
+password must contain a at least 1 time and at most 3 times.</p>
+</blockquote>
+<h1 id="primera-parte">Primera parte</h1>
+<p>Bien, parece sencillo, lo que tenemos que hacer es <strong>procesar el listado de
+reglas por cada contraseña, comprobarlo, y contar los resultados</strong>.</p>
+<p>Vamos a empezar por <em>procesar la entrada</em>. Para eso, vamos a usar una expresión
+regular, viendo que la entrada tiene esta pinta:</p>
+<blockquote>
+<p>1-3 a: abcde</p>
+</blockquote>
+<p>Que podemos sacar con una empresión regular como la siguiente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">LNS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;(\d+)-(\d+) (\w): (.*)&#39;</span>)</code></pre></div>
+<p>Las reglas tienen en cuenta el <strong>numero</strong> de letras, para contar las
+apariciones de una letra en cada cadena, utilizaremos la <a href="https://docs.python.org/3/library/collections.html#collections.Counter">colección
+Counter</a></p>
+<p>Counter cuenta las ocurrencias de <em>elementos hasheables</em>. En este caso, vamos a
+contar cuantas veces aparece una letra en un string.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> Counter(<span style="color:#e6db74">&#34;foobar&#34;</span>)
+Counter({<span style="color:#e6db74">&#39;o&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;f&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;r&#39;</span>: <span style="color:#ae81ff">1</span>})</code></pre></div>
+<p>Como podeis ver, aqui vemos que la letra <code>o</code> aparece dos veces. Lo que nos
+piden las normas es que comprobemos que este entre dos valores, por lo que
+tendremos que hacer algo como lo siguiente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(min) <span style="color:#f92672">&lt;=</span> Counter(string)[letter] <span style="color:#f92672">&lt;=</span> int(max)</code></pre></div>
+<p>Vamos a ponerlo todo junto</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re<span style="color:#f92672">,</span> sys
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+
+LNS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;(\d+)-(\d+) (\w): (.*)&#39;</span>)
+POL <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> m, x, l, s: int(m) <span style="color:#f92672">&lt;=</span> Counter(s)[l] <span style="color:#f92672">&lt;=</span> int(x),
+res <span style="color:#f92672">=</span> open(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>readlines()
+<span style="color:#66d9ef">print</span>(len([l <span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> res <span style="color:#66d9ef">if</span> POL(<span style="color:#f92672">*</span>LNS<span style="color:#f92672">.</span>match(l)<span style="color:#f92672">.</span>groups())]))</code></pre></div>
+<p>Bueno, esta vez nos ha costado unas cuantas lineas más, hemos introducido el
+concepto de <a href="https://docs.python.org/3/library/re.html#re.Match.groups">groups</a>
+de una regex, que simplemente devuelve una tupla con todos los grupos definidos
+(los cuatro), y hemos utilizado una <a href="https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions">función
+lambda</a></p>
+<h1 id="segunda-parte">Segunda parte</h1>
+<p>¡Y llegamos a la segunda parte!</p>
+<blockquote>
+<p>Each policy actually describes two positions in the password, where 1 means
+the first character, 2 means the second character, and so on. (Be careful;
+Toboggan Corporate Policies have no concept of &ldquo;index zero&rdquo;!) Exactly one of
+these positions must contain the given letter. Other occurrences of the
+letter are irrelevant for the purposes of policy enforcement.</p>
+</blockquote>
+<p>Bueno! Cambiamos del total de letras a posiciones especificas.
+Vamos a tener que cambiar nuestra función de comprobación para que compruebe
+que haya <em>una</em> sola ocurrencia de estas letras. Al ser solo una, no nos sirven
+ni <code>any</code> ni <code>all</code>, asi que recurriremos a un Counter() de nuevo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re<span style="color:#f92672">,</span> sys
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+
+LNS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;(\d+)-(\d+) (\w): (.*)&#39;</span>)
+IN <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: int(x) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+POL <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> m, x, l, s: Counter(a <span style="color:#f92672">==</span> l <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> (s[IN(m)], s[IN(x)]))[True] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+res <span style="color:#f92672">=</span> open(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>readlines()
+<span style="color:#66d9ef">print</span>(len([l <span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> res <span style="color:#66d9ef">if</span> POL(<span style="color:#f92672">*</span>LNS<span style="color:#f92672">.</span>match(l)<span style="color:#f92672">.</span>groups())]))</code></pre></div>
+<p>Como veis, aqui no aplicamos nada nuevo, simplemente vamos a contar todas las
+veces que cualquiera de las dos posiciones es la letra que esperamos, y
+comprobar que solo se da una ocurrencia entre las dos opciones. Simplemente hay
+que tener en cuenta que hay que restarle 1 a la posicion indicada, recordemos
+que <strong>no tienen concepto de indice 0</strong>.</p>
+<p>Finalmente, lo ponemos todo junto para dar respuesta a los dos con la menor
+cantidad de lineas posibles, para eso utilizamos una lista de lambdas.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re<span style="color:#f92672">,</span> sys
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+
+LNS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;(\d+)-(\d+) (\w): (.*)&#39;</span>)
+IN <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: int(x) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+POLS <span style="color:#f92672">=</span> [
+    <span style="color:#66d9ef">lambda</span> m, x, l, s: int(m) <span style="color:#f92672">&lt;=</span> Counter(s)[l] <span style="color:#f92672">&lt;=</span> int(x),
+    <span style="color:#66d9ef">lambda</span> m, x, l, s: Counter(a <span style="color:#f92672">==</span> l <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> (s[IN(m)], s[IN(x)]))[True] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+]
+res <span style="color:#f92672">=</span> open(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>readlines()
+<span style="color:#66d9ef">print</span>(len([l <span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> res <span style="color:#66d9ef">if</span> POLS[int(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">2</span>])](<span style="color:#f92672">*</span>LNS<span style="color:#f92672">.</span>match(l)<span style="color:#f92672">.</span>groups())]))</code></pre></div>
+<p>¡<strong>Con esto, en once lineas, damos solucion a los dos problemas</strong>!
+Simplemente, indicaremos la version de la politica de contraseñas con el
+segundo argumento al script (¡Cuenta desde cero, a diferencia de la propia
+politica!)</p>
+
+        </div>
+        <div class="post-footer">
+            <div class="info">
+                
+                <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/adventofcode/">adventofcode</a></span>
+
+            </div>
+        </div>
+
+        
+            
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js"
+        integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js"
+        integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

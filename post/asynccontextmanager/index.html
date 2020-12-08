@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" data-theme=""><head>
+    <title> David Francos | asynccontextmanager – Novedades en python3.7 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.79.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Tecnología y patitos de goma">
+    
+    <link rel="stylesheet"
+          href="https://davidfrancos.net/css/style.min.d553cee7748f9da24efc5e8b914c4afd8d33e80145c3a856fa5554ef28db7aff.css"
+          integrity="sha256-1VPO53SPnaJO/F6LkUxK/Y0z6AFFw6hW&#43;lVU7yjbev8="
+          crossorigin="anonymous"
+          type="text/css"><link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://davidfrancos.net/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://davidfrancos.net/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://davidfrancos.net/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://davidfrancos.net/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://davidfrancos.net/post/asynccontextmanager/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://davidfrancos.net/js/anatole-header.min.e782db136ec18d105a4552702eac49f4620d6867da3fbf808bd53e806c96be6e.js"
+            integrity="sha256-54LbE27BjRBaRVJwLqxJ9GINaGfaP7&#43;Ai9U&#43;gGyWvm4="
+            crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://davidfrancos.net/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="asynccontextmanager – Novedades en python3.7"/>
+<meta name="twitter:description" content="asynccontextmanager – Novedades en python3.7"/>
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://davidfrancos.net/images/profile.jpg" alt="profile picture">
+	    <h3 title=""><a href="/"><img style="border-radius:0; width:50%" src="/images/logo.png" /></a></h3>
+            <div class="description">
+                <p>Tecnología y patitos de goma</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/davidfrancos/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/XayOn" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/david.francos" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:me@davidfrancos.net" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; David Francos 2020 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Inicio</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">Acerca de</a></li>
+        
+        
+        <li class="theme-switch-item">
+            <a class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+
+            <div class="post-title">
+                <h3>asynccontextmanager – Novedades en python3.7</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date">Sun, Feb 3, 2019</span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2 minutos de lectura</span>
+                    </div>
+                
+            </div>
+
+            <p>La semana pasada vio la luz
+<a href="https://www.python.org/downloads/release/python-370/">python3.7</a>, todavía está
+en version alpha0, pero ya podemos encontrar una lista de cambios interesantes.
+El cambio que probablemente vaya a estar más presente en desarrollos futuros es
+el decorador <em>“@contextlib.asynccontextmanager”</em>, este articulo actua a modo de
+pequeña introducción al mismo.</p>
+<p>El concepto de <em>@asynccontextmanager</em> es el mismo que @contextmanager, una forma
+rápida de definir objetos que son manejadores de contexto, sin necesidad de
+implementar una clase con los métodos mágicos <em><strong>enter</strong></em> y <em><strong>exit</strong></em>. Para
+ello se aprovecha de los generadores asíncronos, una funcionalidad introducida
+en <em>python3.7a0</em>, por lo que ya es familiar para muchos dado que <em>python3.6</em>
+lleva tiempo siendo la versión estable.</p>
+<p>La documentación del modelo de datos de Python establece un manejador de
+contexto como un objeto que define el contexto de ejecución que será
+establecido cuando ejecutemos una sentencia <em>“with”</em>. El manejador de contexto
+se encarga de <strong>gestionar la entrada y la salida del contexto de ejecución del
+bloque de código</strong>.</p>
+<p>Esto es, dado un bloque de código, el manejador de contexto ejecuta código
+antes y después del mismo. A modo de &ldquo;preparación-ejecución-limpieza&rdquo;.</p>
+<p><img src="/images/asynccontextmanager.png" alt="Async context manager example"></p>
+<p>En el ejemplo podemos ver que la variable “a” tenia el valor “foo” al inicio
+del bloque de código, y al final del mismo tenía el valor “bar”. A su vez
+podemos ver que han pasado 10s, que hemos esperado con asyncio.sleep.</p>
+<p>Dado que esta funcionalidad sólo esta disponible en python3.7, y este no está
+empaquetado todavía, es necesario compilarlo desde el fuente si queremos
+probarla.</p>
+<p>Es posible hacer el build-dep con python3 en una versión inferior a 3.5, sin
+embargo necesitaremos instalar a mano la librería openssl-dev. En debian
+podemos hacerlo rápidamente como se puede ver a continuación:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get build-dep python3.5
+git clone https://github.com/python/cpython
+cd cpython
+sh configure <span style="color:#f92672">&amp;&amp;</span> make
+sudo make install</code></pre></div>
+
+        </div>
+        <div class="post-footer">
+            <div class="info">
+                
+                <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/whatsnew/">whatsnew</a></span>
+
+            </div>
+        </div>
+
+        
+            
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js"
+        integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js"
+        integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://davidfrancos.net/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
